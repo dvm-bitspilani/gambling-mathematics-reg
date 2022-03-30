@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap');
+
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+#main-form {
+  width: clamp(300px, 90%, 1200px);
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+}
+
+.teammate-entry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.form-field {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  justify-self: start;
+}
+
+.err {
+  color: red;
+}
