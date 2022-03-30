@@ -67,7 +67,7 @@ const validateIDs = i => {
 const validateEmails = i => {
 	let isValid = true;
 	let email = emailElems[i].value;
-	const testEmail = new RegExp("[fhp]20(15|16|17|18|19|20|21)[0-9]{4}@(pilani|goa|hyderabad).bits-pilani\.ac\.in");
+	const testEmail = new RegExp("^[fhp]20(15|16|17|18|19|20|21)[0-9]{4}@(pilani|goa|hyderabad).bits-pilani\.ac\.in$");
 	if (!testEmail.test(email)) {
 		if (i === 0) {
 			leaderErrs.email.innerText = emailErr;
