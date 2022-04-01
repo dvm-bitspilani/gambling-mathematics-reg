@@ -1,55 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" href="css/styles.css">
-	<script src="js/app.js" defer></script>
-	<title>Gambling Mathematics | Register</title>
-</head>
-<body>
-	<form id="main-form">
-		<div class="teammate-entry">
-			<div class="form-field">
-				<label for="leader-name">Leader Name</label>
-				<input type="text" name="leader-name" id="leader-name"
-				       class="input-field input-name" required>
-				<p class="err" id="leader-name-err"></p>
-			</div>
-			<div class="form-field">
-				<label for="leader-id">Leader ID</label>
-				<input type="text" name="leader-id" id="leader-id"
-				       class="input-field input-id" required>
-				<p class="err" id="leader-id-err"></p>
-			</div>
-			<div class="form-field">
-				<label for="leader-email">Leader Email</label>
-				<input type="email" name="leader-email" id="leader-email"
-				       class="input-field input-email" required>
-				<p class="err" id="leader-email-err"></p>
-			</div>
-		</div>
-		<div class="teammate-entry">
-			<div class="form-field">
-				<label for="teammate-name">Teammate Name</label>
-				<input type="text" name="teammate-name" id="teammate-name"
-				       class="input-field input-name" required>
-				<p class="err" id="teammate-name-err"></p>
-			</div>
-			<div class="form-field">
-				<label for="teammate-id">Teammate ID</label>
-				<input type="text" name="teammate-id" id="teammate-id"
-				       class="input-field input-id" required>
-				<p class="err" id="teammate-id-err"></p>
-			</div>
-			<div class="form-field">
-				<label for="teammate-email">Teammate Email</label>
-				<input type="email" name="teammate-email" id="teammate-email"
-				       class="input-field input-email" required>
-				<p class="err" id="teammate-email-err"></p>
-			</div>
-		</div>
-		<button type="submit">Submit</button>
-	</form>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/app.js" defer></script>
+    <title>Gambling Mathematics | Register</title>
+  </head>
+  <body>
+    <form id="main-form">
+      <div id="team-name-cont">
+        <label for="team-name">Team Name</label>
+        <input type="text" name="team-name" id="team-name" />
+      </div>
+      <div class="teammate-entry">
+        <div class="form-field">
+          <label for="leader-name">Leader Name</label>
+          <input
+            type="text"
+            name="leader-name"
+            id="leader-name"
+            class="input-field input-name"
+            required
+          />
+          <p class="err" id="leader-name-err"></p>
+        </div>
+        <div class="form-field">
+          <label for="leader-email">Leader Email</label>
+          <input
+            type="email"
+            name="leader-email"
+            id="leader-email"
+            class="input-field input-email"
+            required
+          />
+          <p class="err" id="leader-email-err"></p>
+        </div>
+      </div>
+      <div class="teammate-entry">
+        <div class="form-field">
+          <label for="teammate-name">Teammate Name</label>
+          <input
+            type="text"
+            name="teammate-name"
+            id="teammate-name"
+            class="input-field input-name"
+            required
+          />
+          <p class="err" id="teammate-name-err"></p>
+        </div>
+        <div class="form-field">
+          <label for="teammate-email">Teammate Email</label>
+          <input
+            type="email"
+            name="teammate-email"
+            id="teammate-email"
+            class="input-field input-email"
+            required
+          />
+          <p class="err" id="teammate-email-err"></p>
+        </div>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
 </html>
