@@ -1,11 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap");
 
 @font-face {
-  font-family: BARTKEY;
-  src: url(../assets/BARTKEY.otf);
-}
-
-@font-face {
   font-family: Pirulen;
   src: url(../assets/Pirulen.otf);
 }
@@ -42,12 +37,13 @@ body {
   backdrop-filter: blur(20px);
   border: 1px solid rgba(209, 213, 219, 0.3);
   border-radius: 20px;
+  overflow-x: hidden;
 }
 
 #form-heading {
   width: max-content;
-  font-family: "BARTKEY";
-  font-size: 3rem;
+  font-family: "Pirulen";
+  font-size: 2rem;
   color: white;
   margin: auto auto;
 }
@@ -55,7 +51,7 @@ body {
 #form-heading-sml {
   width: max-content;
   font-family: "Pirulen";
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   margin: 15px auto;
 }
@@ -158,6 +154,14 @@ input::placeholder {
     background-image: url("../assets/bg_90deg.png");
   }
 
+  #form-heading {
+    font-size: 4.5vw;
+  }
+
+  #form-heading-sml {
+    font-size: 1rem;
+  }
+
   #main-form-cont {
     padding: 30px 20px;
   }
@@ -192,10 +196,10 @@ input::placeholder {
   }
 
   #team-name-label {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 
   #team-name::placeholder {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 }
