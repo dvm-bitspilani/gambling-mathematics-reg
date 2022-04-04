@@ -6,12 +6,20 @@
 }
 
 @font-face {
+  font-family: Pirulen;
+  src: url(../assets/Pirulen.otf);
+}
+
+@font-face {
   font-family: Gilroy;
   src: url(../assets/Gilroy-Light.otf);
 }
 
-html {
-  height: 100%;
+body {
+  background-image: url(../assets/bg.png);
+  background-size: 110%;
+  margin: 0;
+  padding: 0;
 }
 
 .center-child {
@@ -23,38 +31,8 @@ html {
   align-items: center;
 }
 
-body {
-  background-image: url(../assets/bg.png);
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-#form-heading {
-  width: min-content;
-  font-family: "BARTKEY";
-  font-size: 3rem;
-  color: white;
-  margin: auto auto;
-}
-
-#team-name-cont {
-  margin: 50px 0;
-  width: 45%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.break {
-  width: 100%;
-}
-
 #main-form-cont {
-  width: clamp(300px, 90%, 1200px);
-  margin: auto;
+  width: 80%;
   font-family: "Gilroy", sans-serif;
   font-size: 1rem;
   font-weight: 400;
@@ -64,6 +42,30 @@ body {
   backdrop-filter: blur(20px);
   border: 1px solid rgba(209, 213, 219, 0.3);
   border-radius: 20px;
+}
+
+#form-heading {
+  width: max-content;
+  font-family: "BARTKEY";
+  font-size: 3rem;
+  color: white;
+  margin: auto auto;
+}
+
+#form-heading-sml {
+  width: max-content;
+  font-family: "Pirulen";
+  font-size: 2rem;
+  color: white;
+  margin: 15px auto;
+}
+
+#team-name-cont {
+  width: 45%;
+  margin: 50px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .form-field-cont {
@@ -77,13 +79,9 @@ body {
 .form-field {
   margin-top: 20px;
   margin-bottom: 20px;
-  /* display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: 1fr; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex-wrap: wrap;
   width: 90%;
 }
 
@@ -91,25 +89,29 @@ label {
   padding: 10px;
   color: white;
   align-self: center;
-}
-
-#team-name-label {
-  font-size: 1.25rem;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 500;
+  font-size: 1rem;
 }
 
 input {
   align-self: center;
-  width: 60%;
+  width: 50%;
   background: none;
   height: 1.4375rem;
   padding: 16.5px 14px;
   border: 1px solid white;
   border-radius: 10px;
+  outline: none;
   color: white;
   font-family: "Gilroy", sans-serif;
   font-size: 1rem;
+}
+
+#team-name-label {
+  padding: 0;
+  width: max-content;
+  font-size: 1.25rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
 }
 
 input::placeholder {
@@ -119,6 +121,8 @@ input::placeholder {
 }
 
 #team-name {
+  width: 60%;
+  justify-self: end;
   font-size: 1.15rem;
   font-weight: 500;
 }
@@ -130,14 +134,13 @@ input::placeholder {
 
 .btn {
   display: block;
-  margin: auto;
+  margin: 20px auto;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.2rem;
   outline: 1px solid rgba(255, 255, 255, 1);
   padding: 5px 30px;
   border: 4px solid black;
-  margin: 20px auto;
   transition: all 700ms ease-in-out;
   cursor: pointer;
 }
@@ -150,13 +153,49 @@ input::placeholder {
   color: red;
 }
 
-@media (max-width: 778px) {
+@media (max-width: 700px) {
+  body {
+    background-image: url("../assets/bg_90deg.png");
+  }
+
+  #main-form-cont {
+    padding: 30px 20px;
+  }
+
+  #team-name-cont {
+    width: 100%;
+  }
+
   .form-field-cont {
     grid-template-columns: 1fr;
     grid-template-rows: auto;
   }
 
-  #team-name-cont {
-    width: 90%;
+  .form-field {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  label {
+    justify-self: start;
+    font-size: 0.9rem;
+  }
+
+  input {
+    width: 40%;
+    align-self: start;
+  }
+
+  input::placeholder {
+    justify-self: start;
+    font-size: 0.9rem;
+  }
+
+  #team-name-label {
+    font-size: 1.1rem;
+  }
+
+  #team-name::placeholder {
+    font-size: 1.1rem;
   }
 }
