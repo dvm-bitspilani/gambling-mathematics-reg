@@ -1,8 +1,3 @@
-const nameErr = "The name should be less than 40 characters";
-
-const leaderErr = document.getElementById("leader-name-err");
-const teammateErr = document.getElementById("teammate-name-err");
-
 const form = document.getElementById("main-form");
 const nameElems = document.querySelectorAll(".input-name");
 const emailElems = document.querySelectorAll(".input-email");
@@ -11,27 +6,6 @@ const teammates = document.querySelectorAll(".teammate-entry");
 const teamName = document.getElementById("team-name");
 
 let data = {};
-
-const validateName = (i) => {
-  let isValid = true;
-  let nameVal = nameElems[i].value;
-  if (!(nameVal.length <= 40) || !(nameVal.length > 0)) {
-    if (i === 0) {
-      leaderErr.innerText = nameErr;
-    } else {
-      teammateErr.innerText = nameErr;
-    }
-
-    isValid = false;
-  } else {
-    if (i === 0) {
-      leaderErr.innerText = "";
-    } else {
-      teammateErr.innerText = "";
-    }
-  }
-  return isValid;
-};
 
 const validateUnique = () => {
   let isValid = true;
@@ -43,21 +17,27 @@ const validateUnique = () => {
 };
 
 const validateForm = (i) => {
-  return validateName(i) && validateUnique();
+  return validateUnique();
 };
 
 const submitForm = async () => {
   try {
-    let response = await fetch("https://reqres.in/api/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      data: JSON.stringify(data),
-    });
-    console.log(response);
-    let out = await response.json();
-    console.log(out); 
+    let res = await fetch(
+      "https://bits-apogee.org/gamblingmaths/create_team/",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        data: JSON.stringify(data),
+      }
+    );
+    console.log(res);
+    if (res.ok) {
+      alert("Registered Successfully");
+    } else {
+      alert("There was an error");
+    }
   } catch (err) {
     console.log(`Failed ${err}`);
   }
@@ -71,14 +51,13 @@ form.addEventListener("submit", (evt) => {
   if (validateForm(0) && validateForm(1)) {
     console.log("Valid");
     data = {
-      // leader_name: nameElems[0].value,
-      // leader_email: emailElems[0].value,
-      // team_name: teamName.value,
-      // members: [{ name: nameElems[1].value, email: emailElems[1].value }],
-      name: nameElems[0].value,
-      role: "leader",
+      leader_name: nameElems[0].value,
+      leader_email: emailElems[0].value,
+      team_name: teamName.value,
+      members: [
+        { member_name: nameElems[1].value, member_email: emailElems[1].value },
+      ],
     };
-    console.log(data);
     submitForm();
     inputs.forEach((input) => (input.value = ""));
   } else {
